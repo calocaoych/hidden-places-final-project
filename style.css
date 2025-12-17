@@ -363,7 +363,7 @@ object-fit: contain;
     text-align: center; 
 }
 .quote-c {
-  font-family: 'Dealoras Normal', sans-serif;
+    font-family: 'Dealoras Normal', sans-serif;
     font-size: 14px;
     font-style: normal;
     padding-left: 0rem;
@@ -586,13 +586,16 @@ object-fit: contain;
     font-family: 'Dealoras Normal', sans-serif;
   }
 .quote-c {
-    text-align: center;      
-    object-fit: contain;
+   text-align: center;      /* align text inside the box to the right */
+    max-width: 50%;         /* adjust width so it doesn't occupy whole row */
+    align-self: flex-start; /* keep it aligned to the top of the header/row */
+    padding-bottom: 1%;
+    padding-top: 2%;
     line-height: 33px;
-    font-size: 24px;
-    color: rgb(143, 175, 190);
-    font-family: 'Kaivalya Normal', sans-serif;
-  }
+    font-size: 36px;
+    color: rgb(127, 159, 186);
+    font-family: 'Dealoras Normal', sans-serif;
+}
 
   /* NAVIGATION STYLES FOR DESKTOP */
 
@@ -654,7 +657,7 @@ object-fit: contain;
   font-family: 'Devanagari Normal', sans-serif;
   line-height: 1.5;
   margin: 1rem;
-  font-size: 30px;
+  font-size: 24px;
 }
 
 .footer-font {
@@ -666,7 +669,7 @@ object-fit: contain;
     font-family: 'Devanagari Normal', sans-serif;
     align-items: center;
     display: flex;
-    gap: 40rem;
+    gap: 16rem;
   }
 
 .pics img {
