@@ -1,3 +1,25 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.content > * {
+  min-width: 0;
+}
+
+
+
 /* Mobile first */
 #desktop-map {
   display: none;
@@ -410,11 +432,7 @@ object-fit: contain;
     font-style: normal;
     color: rgb(151, 207, 255); 
 }
-.body {
-    margin: 0 !important;
-    padding:0  !important;
-    overflow: auto !important;
-}
+
 
 .footer {
   background: #444444;
@@ -455,11 +473,12 @@ object-fit: contain;
   }
    .content {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 2.5fr 1.5fr;
     grid-template-areas:
-      "weather1 text1    image1"
-      "facts1   but1     quote1"
-      "photo1   yoga1    drawing1";
+    "weather1 text1    image1"
+    "facts1   text1    quote1"
+    "photo1   but1     drawing1"
+    "photo1   yoga1    drawing1";
     gap: 3rem;
     margin: 0 auto;
     padding: 1%;
@@ -482,7 +501,7 @@ object-fit: contain;
   .photo1   { grid-area: photo1; }
   .quote1   { grid-area: quote1; }
   .image1   { grid-area: image1; }
-  .drawing1 { grid-area: quote1; }
+  .drawing1 { grid-area: drawing1; }
 
   .hero {
     flex-direction: row;
@@ -525,11 +544,7 @@ object-fit: contain;
     padding-left: 20%;
     padding-right: 20%;
 }
-body {
-    margin: 3px !important;
-    padding:1  !important;
-    
-}
+
   .btn-pair {
     
     align-items:center;
@@ -550,8 +565,7 @@ body {
 
   .quote {
     color: #a77850;
-    text-align: center;      /* align text inside the box to the right */
-    max-width: 50%;         /* adjust width so it doesn't occupy whole row */
+    text-align: center;       /* adjust width so it doesn't occupy whole row */
     align-self: flex-start; /* keep it aligned to the top of the header/row */
     padding-bottom: 1%;
     padding-top: 2%;
