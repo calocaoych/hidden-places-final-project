@@ -1,0 +1,710 @@
+/* Mobile first */
+#desktop-map {
+  display: none;
+}
+#koglenweb {
+  display:none;
+}
+
+  /*break for phone*/ 
+
+@media screen and (min-width: 431px) {
+  #desktop-map {
+    display: block;
+  }
+  #mobile-map {
+    display: none;
+  }
+  .mobile-only {
+    display: none;
+  }
+
+}
+    
+  
+ 
+
+
+.container {
+  display: block;
+  flex-direction: column; /*Stack vertically on mobile*/
+  gap: 1rem;
+  margin: 1rem 0;
+  padding: .75rem;
+}
+
+
+
+/* FONT IMPORTS ===================================================== */
+
+/* normal Dealoras font import */
+@font-face {
+  font-family: 'Dealoras Normal';
+  src: url(/fonts/Dealoras-Regular.ttf) format('truetype');
+  font-weight: normal;
+    font-style: normal;
+    font-display: swap; /* better loading*/
+} 
+
+/* normal Kaivalyafont import */
+@font-face {
+  font-family: 'Kaivalya Normal';
+  src: url(/fonts/KaivalyaIkiikocom-0Wy9r.otf) format('opentype');
+  font-weight: normal;
+    font-style: normal;
+    font-display: swap; /* better loading*/
+}
+
+/* heavy Kaivalya font import */
+@font-face {
+  font-family: 'Kaivalya Heavy';
+  src: url(/fonts/KaivalyaIkiikocom-0Wy9r.otf) format('opentype');
+  font-weight: 600;
+    font-style: normal;
+    font-display: swap; /* better loading*/
+}
+/* normal devanagari font import */
+@font-face {
+  font-family: 'Devanagari Normal';
+  src: url(/fonts/AnekLatin-VariableFont_wdth\,wght.ttf) format('truetype');
+  font-weight: normal;
+    font-style: normal;
+    font-display: swap; /* better loading*/
+}       
+/* italic devanagari font import */
+@font-face {
+  font-family: 'Devanagari Italic';
+  src: url(/fonts/AnekLatin-VariableFont_wdth\,wght.ttf) format('truetype');
+  font-weight: normal;
+    font-style: italic;
+    font-display: swap; /* better loading*/
+}   
+/* demibold devanagari font import */
+@font-face {
+  font-family: 'Devanagari Demibold';
+  src: url(/fonts/AnekLatin-VariableFont_wdth\,wght.ttf) format('truetype');
+  font-weight: 500;
+    font-style: normal;
+    font-display: swap; /* better loading*/
+}   
+
+/* light devanagari font import */
+@font-face {
+  font-family: 'Devanagari light';
+  src: url(/fonts/AnekLatin-VariableFont_wdth\,wght.ttf) format('truetype');
+  font-weight: 200;
+    font-style: normal;
+    font-display: swap; /* better loading*/
+}   
+
+/* light italic devanagari font import */
+@font-face {
+  font-family: 'Devanagari Light Italic';
+  src: url(/fonts/DevanagariLightItalic.ttf) format('truetype');
+  font-weight: 300;
+    font-style: italic;
+    font-display: swap; /* better loading*/
+}
+
+/* heavy devanagari font import */
+@font-face {
+  font-family: 'Devanagari Heavy';
+  src: url(/fonts/DevanagariHeavy.ttf) format('truetype');
+  font-weight: 600;
+    font-style: normal;
+    font-display: swap; /* better loading*/
+}
+
+/* end FONT IMPORTS ===================================================== */
+
+/* MOBILE FIRST STYLES ===================================================== */
+
+
+/* NAV and HEADER STYLES */
+
+.menu {
+  position: fixed;
+  inset: 0;                  /* full-screen overlay */
+  display: none;
+  background: rgba(0,0,0,0.6);
+  list-style: none;
+  margin: 0;
+  padding: 2rem;
+  align-items: start;
+  justify-content: flex-start;
+  z-index: 1000;
+}
+.menu.open {
+  display: flex;
+}
+.menu > li {
+  background: white;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  width: 100%;
+  max-width: 360px; /* slide-in panel width */
+}
+/* ensure the close button is at top */
+.menu-close { order: -1; }
+.nav ul     {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* hide menu */
+.nav {
+    display: none;
+}
+
+/* on mobile */
+.nav.is-open {
+    display: block;
+    background: #ffffff;
+}
+
+.nav-toggle {
+    display: inline-block;
+}
+
+
+/* top navigation bar */
+.top-nav {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  background:  #fff;
+  
+  position: relative;
+  z-index: 100;
+  
+}
+
+.top-nav .logo { text-decoration: none; color: #000; font-weight: 600; }
+.logo img {
+  height: 40px;    /* change to preferred size on mobile */
+  width: auto;
+  display: block;
+}
+
+/* burger button */
+.nav-toggle {
+  font-size: 28px;
+  line-height: 1;
+  background: none;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+}
+
+/* overlay menu */
+#mainMenu {
+  position: fixed;
+  inset: 0;
+  display: none;
+  background: rgba(0,0,0,0.4);
+  z-index: 999;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+#mainMenu.open {
+  display: flex;
+}
+
+/* panel inside overlay */
+#mainMenu > ul {
+  background: white;
+  width: 280px;
+  max-width: 90%;
+  margin: 0;
+  padding: 1rem;
+  list-style: none;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+#mainMenu a {
+  display: block;
+  padding: 0.5rem 0;
+  color: #222;
+  text-decoration: none;
+}
+
+
+.body-font {
+  font-family: 'Devanagari Normal', sans-serif;
+  line-height: 1.5;
+  margin: 1rem;
+  font-size: 16px;
+}
+
+.photo {
+margin:0;
+object-fit:cover;
+object-fit: contain;
+}
+
+.photo img {
+  width: 100%;
+  display: block;
+}
+
+/* HERO IMAGE STYLES */
+
+.hero img{
+  width: 100%;
+  height: 190px;  
+  display: block;
+  object-fit: cover;
+  border-radius: 0%;
+  
+}
+
+.hero figure {
+  margin: 0;    
+}
+
+.heading1 {
+  color: rgb(0, 0, 0); 
+  font-family: 'Devanagari Heavy', sans-serif;  
+  text-align: center;
+  font-size: 30px;
+  
+}
+  
+
+
+.heading2 {
+  color: rgb(128, 76, 76); 
+  font-family: 'Devanagari Light', sans-serif;  
+  text-align: center;
+  font-size: 24px;
+}
+.heading2egaa {
+  color: rgb(134, 164, 183); 
+  font-family: 'Devanagari Light', sans-serif;  
+  text-align: center;
+  font-size: 24px;
+}
+.heading2balle {
+  color: rgb(73, 127, 143); 
+  font-family: 'Devanagari Light', sans-serif;  
+  text-align: center;
+  font-size: 24px;
+}
+.heading3 {
+  color:chocolate ;
+}
+.heading3egaa {
+  color:rgb(148, 189, 202) ;
+}.heading3balle {
+  color:rgb(34, 160, 185) ;
+}
+
+.drawing img {
+    width: 70%;
+    height: auto;
+    display: block !important;
+    border-radius: 0%;
+    text-align: center;
+    object-fit: contain;
+    justify-self: center;
+}
+
+.pics img {
+    width: 30%;
+    height: auto;
+    display: block;
+    border-radius: 0%;
+}
+
+.button img {
+    width: 30%;
+    height: auto;
+    display: block;
+    border-radius: 0%;
+    cursor: pointer;
+    text-align: center;
+    justify-self: center;
+}
+
+.quote {
+    font-family: 'Dealoras Normal', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    padding-left: 0rem;
+    margin: 0 auto;
+    color: #a77850;
+    text-align: center; 
+}
+
+.quote-b {
+    font-family: 'Dealoras Normal', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    padding-left: 0rem;
+    margin: 0 auto;
+    color: rgb(35, 113, 182);
+    text-align: center; 
+}
+.quote-c {
+  font-family: 'Dealoras Normal', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    padding-left: 0rem;
+    margin: 0 auto;
+    color: rgb(139, 172, 209);
+    text-align: center; 
+}
+
+
+.painting {
+  font-family: 'Devanagari Light', sans-serif;
+  font-size: 13px;
+  text-align: center;
+  font-style: normal;
+  padding-left: 0rem;
+  margin: 0 auto;
+  color: rgb(56, 132, 199);
+ 
+}
+
+.small-font-koglen{
+  font-family: 'Devanagari Light', sans-serif;
+  font-size: 16px;
+  text-align: center;
+  font-style: normal;
+  padding-left: 0rem;
+  margin: 0 auto;
+  color: rgb(176, 162, 128);
+
+  .small-font-baken {font-family: 'Devanagari Light', sans-serif;
+  font-size: 16px;
+  text-align: center;
+  font-style: normal;
+  padding-left: 0rem;
+  margin: 0 auto;
+  color: rgb(146, 168, 164);
+}
+ 
+.small-font-ballehage {font-family: 'Devanagari Light', sans-serif;
+  font-size: 16px;
+  text-align: center;
+  font-style: normal;
+  padding-left: 0rem;
+  margin: 0 auto;
+  color: rgb(106, 173, 196) ;
+}
+
+}
+
+.apostrophe {
+    font-family: 'Dealoras Normal', sans-serif;
+    font-size: 50px;
+    font-style: normal;
+    color: chocolate; 
+}
+ 
+.apostrophe-b {
+    font-family: 'Dealoras Normal', sans-serif;
+    font-size: 50px;
+    font-style: normal;
+    color: rgb(68, 161, 242); 
+}
+.apostrophe-c {
+    font-family: 'Dealoras Normal', sans-serif;
+    font-size: 50px;
+    font-style: normal;
+    color: rgb(151, 207, 255); 
+}
+.body {
+    margin: 0 !important;
+    padding:0  !important;
+    overflow: auto !important;
+}
+
+
+
+.footer {
+  background: #444444;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-family: 'Devanagari Normal', sans-serif;
+    font-size: 12px;
+}
+
+.footer-font {
+    font-family: 'Kaivalya Normal', sans-serif;
+    font-size: 12px;
+}
+
+.footer a,
+.footer a:link,
+.footer a:visited {
+  color: #ffffff;         /* light color for links */
+  
+}
+
+
+.footer a:hover,
+.footer a:focus {
+  color: #ffffff;           /* slightly darker on hover/focus */
+  text-decoration: underline; /* optional */
+}
+
+
+
+/* RESPONSIVE FOR DESKTOP! ====================================================== */
+
+
+@media screen and (min-width: 768px) {
+
+/* certain elements completely hidden on small screens,
+   use .desktop-only on those elements (tool) */
+  .desktop-only {
+  display: none;
+  }
+
+
+
+
+
+ 
+ 
+  
+   .content {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas:
+      "weather1 text1    image1"
+      "facts1   but1     quote1"
+      "photo1   yoga1    drawing1";
+    gap: 3rem;
+    margin: 0 auto;
+    padding: 1%;
+  }
+
+
+  
+ /* column helpers (use on elements to set which column) */
+  .col-1 { grid-column: 1; }
+  .col-2 { grid-column: 2; }
+  .col-3 { grid-column: 3; }
+
+  .weather1 { 
+    grid-area: weather1;
+    padding-top: 1px;
+   padding-left: 0px;
+    grid-template-columns: 1fr; }
+  .text1    { grid-area: text1; }
+  .facts1   { grid-area: facts1; }
+  .but1     { grid-area: but1; grid-template-columns: auto;}
+  .yoga1    { grid-area: yoga1; }
+  .photo1   { grid-area: photo1; }
+  .quote1   { grid-area: quote1; }
+  .image1   { grid-area: image1; }
+  .drawing1 { grid-area: quote1; }
+
+
+ 
+  .hero {
+    flex-direction: row;
+    align-items: center;
+  }
+  .hero img {
+    width: 100%;
+    height: 700px;
+    flex: 3;
+    border-radius: 0%;
+  }
+  .heading1 {
+    color: rgb(5, 5, 5);
+    font-family: 'Devanagari Heavy', sans-serif;
+    font-size: 60px;
+    text-align: center; 
+    letter-spacing: 1px;
+  }
+   .heading2 {
+    color: rgb(5, 5, 5);
+    font-family: 'Devanagari Normal', sans-serif;
+    font-size: 40px; 
+    text-align: center;
+    padding-left: 20%;
+    padding-right: 20%;
+   }
+ .heading2balle {
+    color: rgb(53, 122, 178);
+    font-family: 'Devanagari Normal', sans-serif;
+    font-size: 40px; 
+    text-align: center;
+    padding-left: 20%;
+    padding-right: 20%;
+ }
+  .heading2egaa {
+    color: rgb(139, 182, 194);
+    font-family: 'Devanagari Normal', sans-serif;
+    font-size: 40px; 
+    text-align: center;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+body {
+    margin: 3px !important;
+    padding:1  !important;
+    
+}
+
+
+  .btn-pair {
+    
+    align-items:center;
+    flex-wrap: nowrap;
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+    gap: 1rem;
+    flex-direction: row;
+  
+  }
+  .but1 .button-link {
+    display: inline-block;
+  }
+  
+ 
+ 
+
+
+  
+ 
+ .btn-pair img{ 
+  width: 60%; height: auto; display: block;}
+
+ 
+
+
+  .quote {
+    color: #a77850;
+    text-align: center;      /* align text inside the box to the right */
+    max-width: 50%;         /* adjust width so it doesn't occupy whole row */
+    align-self: flex-start; /* keep it aligned to the top of the header/row */
+    padding-bottom: 1%;
+    padding-top: 2%;
+    line-height: 33px;
+    font-size: 36px;
+    font-family: 'Dealoras Normal', sans-serif;
+  }
+
+  .quote-b {
+    text-align: center;      /* align text inside the box to the right */
+    max-width: 50%;         /* adjust width so it doesn't occupy whole row */
+    align-self: flex-start; /* keep it aligned to the top of the header/row */
+    padding-bottom: 1%;
+    padding-top: 2%;
+    line-height: 33px;
+    font-size: 36px;
+    color: rgb(56, 132, 199);
+    font-family: 'Dealoras Normal', sans-serif;
+  }
+.quote-c {
+    text-align: center;      
+    object-fit: contain;
+    line-height: 33px;
+    font-size: 24px;
+    color: rgb(143, 175, 190);
+    font-family: 'Kaivalya Normal', sans-serif;
+  }
+
+
+  /* NAVIGATION STYLES FOR DESKTOP */
+
+
+  .top-nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: transparent;
+    padding: 0 1rem;
+    height: 80px;
+  }
+
+  .top-nav .logo {
+    margin-right: 1rem;
+    z-index: 120;
+  }
+  
+    /* show the nav (override mobile/hidden overlay) */
+  .nav,
+  #mainMenu,
+  #mainMenu[hidden] {
+    display: block !important;
+    position: static !important;
+    inset: auto !important;
+    background: transparent !important;
+    padding: 0 !important;
+    width: auto !important;
+  }
+
+  /* horizontal list */
+  #mainMenu > ul {
+    display: flex;
+    flex-direction: row;
+    gap: 12rem;
+    margin: 0;
+    font-family: Kaivalya Heavy;
+    font-size: 24px;
+    background: transparent;
+    padding: 0;
+    list-style: none;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  #mainMenu > ul > { margin: 0; background: transparent; }
+
+  #mainMenu a {
+    display: inline-block;
+    padding: 0.5rem 0.75rem;
+    color: inherit;
+    background: transparent;
+    text-decoration: none;
+  }
+  .nav-toggle {
+      display: none;
+  } 
+
+.body-font {
+  font-family: 'Devanagari Normal', sans-serif;
+  line-height: 1.5;
+  margin: 1rem;
+  font-size: 30px;
+}
+
+.footer-font {
+    font-family: 'Kaivalya Normal', sans-serif;
+    font-size: 20px;
+} 
+  .footer {
+    font-size: 24px;
+    font-family: 'Devanagari Normal', sans-serif;
+    align-items: center;
+    display: flex;
+    gap: 40rem;
+  }
+
+
+
+.pics img {
+   width: 100%;
+    height: auto;
+    max-height: 350px;   /* height on desktop */
+    object-fit: contain;   /* contain to show whole image */
+    display: block;
+}
+.drawing img {width: 80%; height: auto; display: block; overflow: auto;}
+.button img { width: 140px; max-width: 33%; height: auto; display: block; overflow: auto; }
+
+}

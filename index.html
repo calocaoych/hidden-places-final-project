@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Index</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+ <header class="top-nav">
+   <a class="logo" href="index.html" aria-label="Home">
+     <img src="images/Logonav.png" alt="logo icon">
+   </a>
+     <!-- Hamburger button -->
+     <button class="nav-toggle" aria-controls="mainMenu" aria-expanded="false">
+       ☰
+     </button>
+     <!-- Menu -->
+    <nav id="mainMenu" class="nav" aria-label="Main navigation" hidden>
+      <ul>
+         <li><a href="index.html">Home</a></li>
+         <li><a href="koglen.html">Koglen</a></li>
+         <li><a href="ballehage.html">Ballehage</a></li>
+         <li><a href="egaa.html">Egaa Marina</a></li>
+         <li><a href="learnmore.html">Learn more</a></li>
+      </ul>
+    </nav>
+ </header>
+   
+  <main>
+      <map name="infographic">
+  <area
+    shape="poly"
+    coords="0,0,430,0,430,0,0,60"  // coordinates for the polygon 1
+    href="/"
+    alt="/" />
+  <area
+    shape="poly"
+    coords="0,60,430,60,430,285,0,520"  // coordinates for the polygon 2
+    href="koglen.html"
+    alt="Koglen" />
+  <area
+    shape="poly"
+    coords="70,502,430,305,430,815" // coordinates for the polygon 3
+    href="ballehage.html"
+    alt="ballehage" />
+ <area
+    shape="poly"
+    coords="0,540,54,510,430,836,430,932,0,932" // coordinates for the polygon 3
+    href="egaa.html"
+    alt="Egaa" />
+</map>
+
+
+
+    <img id="mobile-map" usemap="#infographic" src="images/phoneareawithoutnav.png" 
+    alt="Home Image" style="width: 100%; height: auto;"> 
+ 
+
+
+  <!-- Desktop below -->
+    <map name="graphic"> 
+  <area
+    shape="poly"
+    coords="0,0,1440,0,1440,90,0,545"  // coordinates for the polygon 1
+    href="koglen.html"
+    alt="Koglen" />
+  <area
+    shape="poly"
+    coords="1440,90,1440,810,270,468"  // coordinates for the polygon 2
+    href="ballehage.html"
+    alt="ballehage" />
+  <area
+    shape="poly"
+    coords="1440,1024,0,1024,0,545,270,468" // coordinates for the polygon 3
+    href="egaa.html"
+    alt="egaa" />
+</map>
+
+
+
+
+    <img id="desktop-map" usemap="#graphic" src="images/home_photo.png" 
+    alt="Home Image" style="width: 100%; height: auto;">    
+</body>
+</html>
