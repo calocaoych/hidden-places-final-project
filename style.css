@@ -343,6 +343,40 @@ object-fit: contain;
     justify-self: center;
 }
 
+.soft-border-btn-koglen {
+  background-color: #ffffff;
+  color: #0d0d0d;
+  font-family: 'Impact, Haettenschweiler', 'Arial Normal', sans-serif;
+  letter-spacing: .03em;
+  border: 2px solid #9a8582; /* dusty / warm gray */
+  border-radius: 8px;
+  margin-left: 5rem;
+  padding: 0.75rem 1.75rem;
+  font-size: 0.95rem;
+}
+.soft-border-btn-egaa {
+  background-color: #ffffff;
+  color: #0d0d0d;
+  font-family: 'Impact, Haettenschweiler', 'Arial Normal', sans-serif;
+  letter-spacing: .03em;
+  border: 2px solid #89b6c8; /* dusty / warm gray */
+  border-radius: 8px;
+  margin-left: 5rem;
+  padding: 0.75rem 1.75rem;
+  font-size: 0.95rem;
+}
+.soft-border-btn-balle {
+  background-color: #ffffff;
+  color: #0d0d0d;
+  font-family: 'Impact, Haettenschweiler', 'Arial Normal', sans-serif;
+  letter-spacing: .03em;
+  border: 2px solid #377f9f; /* dusty / warm gray */
+  border-radius: 8px;
+  margin-left: 5rem;
+  padding: 0.75rem 1.75rem;
+  font-size: 0.95rem;
+}
+
 .quote {
     font-family: 'Dealoras Normal', sans-serif;
     font-size: 14px;
@@ -389,25 +423,29 @@ object-fit: contain;
   font-size: 16px;
   text-align: center;
   font-style: normal;
-  padding-left: 0rem;
-  margin: 0 auto;
+  padding-left: 1rem;
+  margin: 1rem;
   color: rgb(176, 162, 128);
 
-  .small-font-baken {font-family: 'Devanagari Light', sans-serif;
+.small-font-baken {
+  
+  font-family: 'Devanagari Light', sans-serif;
   font-size: 16px;
   text-align: center;
   font-style: normal;
-  padding-left: 0rem;
-  margin: 0 auto;
+  padding-left: 1rem;
+  margin: 1rem;
   color: rgb(146, 168, 164);
 }
  
-.small-font-ballehage {font-family: 'Devanagari Light', sans-serif;
+.small-font-ballehage {
+  
+  font-family: 'Devanagari Light', sans-serif;
   font-size: 16px;
   text-align: center;
   font-style: normal;
-  padding-left: 0rem;
-  margin: 0 auto;
+  padding-left: 1rem;
+  margin: 1rem;
   color: rgb(106, 173, 196) ;
 }
 
@@ -460,6 +498,35 @@ object-fit: contain;
   color: #ffffff;           /* slightly darker on hover/focus */
   text-decoration: underline; /* optional */
 }
+/* Header */
+.fire-header {
+  padding: 2rem 3rem 1rem;
+}
+
+.fire-header h1 {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 1rem;
+}
+
+/* Sections */
+.fire-section {
+  padding: 3rem;
+  display: block;
+}
+
+/* Backgrounds */
+.fire-section.light {
+  background-color: #fbf1e6;
+}
+
+.fire-section.medium {
+  background-color: #f1d7bd;
+}
+
+.fire-section.dark {
+  background-color: #e8bf9c;
+}
 
 /* RESPONSIVE FOR DESKTOP! ====================================================== */
 
@@ -477,11 +544,10 @@ object-fit: contain;
     grid-template-areas:
     "weather1 text1    image1"
     "facts1   text1    quote1"
-    "photo1   but1     drawing1"
     "photo1   yoga1    drawing1";
     gap: 3rem;
     margin: 0 auto;
-    padding: 1%;
+    padding: 0%;
   }
 
  /* column helpers (use on elements to set which column) */
@@ -544,12 +610,65 @@ object-fit: contain;
     padding-left: 20%;
     padding-right: 20%;
 }
+.soft-border-btn-koglen {
+  background-color: #ffffff;
+  color: #0d0d0d;
+  font-family: 'Impact, Haettenschweiler', 'Arial Normal', sans-serif;
+  letter-spacing: .05em;
+  border: 2px solid #9a8582; /* dusty rose / warm gray */
+  border-radius: 10px;
 
+  padding: 0.75rem 1.75rem;
+  font-size: 0.95rem;
+  
+
+  cursor: pointer;
+  transition: background-color 0.2s ease,
+              color 0.2s ease,
+              border-color 0.2s ease;
+
+}
+.soft-border-btn-egaa {
+  background-color: #ffffff;
+  color: #000000;
+
+  border: 2px solid #91c2d5; /* dusty / warm gray */
+  border-radius: 10x;
+
+  padding: 0.75rem 1.75rem;
+  font-size: 1rem;
+  font-family: Impact, Haettenschweiler, 'Arial Normal', sans-serif;
+  letter-spacing: .05em;
+
+  cursor: pointer;
+  transition: background-color 0.2s ease,
+              color 0.2s ease,
+              border-color 0.2s ease;
+
+}
+.soft-border-btn-balle {
+  background-color: #ffffff;
+  color: #000000;
+
+  border: 2px solid #578394; /* dusty rose / warm gray */
+  border-radius: 10px;
+
+  padding: 0.75rem 1.75rem;
+  font-size: 0.95rem;
+  font-family: Impact, Haettenschweiler, 'Arial Normal', sans-serif;
+  letter-spacing: .05em;
+
+  cursor: pointer;
+  transition: background-color 0.2s ease,
+              color 0.2s ease,
+              border-color 0.2s ease;
+
+}
   .btn-pair {
     
-    align-items:center;
+    align-items:center;      
     flex-wrap: nowrap;
-    width: 50%;
+    width: 70%;
     height: auto;
     object-fit: cover;
     gap: 1rem;
@@ -559,6 +678,37 @@ object-fit: contain;
   .but1 .button-link {
     display: inline-block;
   }
+.small-font-baken {
+  font-family: 'Devanagari Light', sans-serif;
+  font-size: 17px;
+  text-align: center;
+  font-style: normal;
+  padding-left: 1rem;
+  margin: 1rem;
+  color: rgb(146, 168, 164);
+}
+
+.small-font-balle {
+  
+  font-family: 'Devanagari Light', sans-serif;
+  font-size: 17px;
+  text-align: center;
+  font-style: normal;
+  padding-left: 1rem;
+  margin: 1rem;
+  color: rgb(82, 142, 201);
+}
+
+.small-font-koglen {
+  
+  font-family: 'Devanagari Light', sans-serif;
+  font-size: 17px;
+  text-align: center;
+  font-style: normal;
+  padding-left: 1rem;
+  margin: 1rem;
+  color: rgb(142, 128, 85);
+}
 
  .btn-pair img{ 
   width: 60%; height: auto; display: block;}
@@ -568,7 +718,7 @@ object-fit: contain;
     text-align: center;       /* adjust width so it doesn't occupy whole row */
     align-self: flex-start; /* keep it aligned to the top of the header/row */
     padding-bottom: 1%;
-    padding-top: 2%;
+    padding-top: 1%;
     line-height: 33px;
     font-size: 36px;
     font-family: 'Dealoras Normal', sans-serif;
@@ -576,18 +726,16 @@ object-fit: contain;
 
   .quote-b {
     text-align: center;      /* align text inside the box to the right */
-    max-width: 50%;         /* adjust width so it doesn't occupy whole row */
     align-self: flex-start; /* keep it aligned to the top of the header/row */
     padding-bottom: 1%;
-    padding-top: 2%;
+    padding-top: 1%;
     line-height: 33px;
     font-size: 36px;
     color: rgb(56, 132, 199);
     font-family: 'Dealoras Normal', sans-serif;
   }
 .quote-c {
-   text-align: center;      /* align text inside the box to the right */
-    max-width: 50%;         /* adjust width so it doesn't occupy whole row */
+    text-align: center;      /* align text inside the box to the right */
     align-self: flex-start; /* keep it aligned to the top of the header/row */
     padding-bottom: 1%;
     padding-top: 2%;
@@ -628,8 +776,8 @@ object-fit: contain;
   /* horizontal list */
   #mainMenu > ul {
     display: flex;
-    flex-direction: row;
-    gap: 12rem;
+    flex-direction: row;   /* responsive nav bar for desktop */ 
+    gap: 7rem;
     margin: 0;
     font-family: Kaivalya Heavy;
     font-size: 24px;
@@ -656,8 +804,8 @@ object-fit: contain;
 .body-font {
   font-family: 'Devanagari Normal', sans-serif;
   line-height: 1.5;
-  margin: 1rem;
-  font-size: 24px;
+  margin: 0;
+  font-size: 18px;
 }
 
 .footer-font {
@@ -681,5 +829,96 @@ object-fit: contain;
 }
 .drawing img {width: 80%; height: auto; display: block; overflow: auto;}
 .button img { width: 140px; max-width: 33%; height: auto; display: block; overflow: auto; }
+
+/* Learn more ========================================================*/ 
+/* Root wrapper */
+.fire {
+  width: 100%;
+  color: #1f1f1f;
+  font-family: serif;
+}
+
+/* Header */
+.fire-header {
+  padding: 2rem 3rem 1rem;
+}
+
+.fire-header h1 {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 1.8rem;
+}
+
+/* Sections */
+.fire-section {
+  padding: 3rem;
+  display: block;
+}
+
+/* Backgrounds */
+.fire-section.light {
+  background-color: #fbf1e6;
+}
+
+.fire-section.medium {
+  background-color: #f1d7bd;
+}
+
+.fire-section.dark {
+  background-color: #e8bf9c;
+}
+
+/* Section titles */
+.fire-section h2 {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  font-weight: normal;
+}
+
+/* Grid */
+.fire-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+/* Cards & books */
+.fire-card,
+.fire-book {
+  text-align: center;
+}
+
+/* Media */
+.fire figure {
+  margin: 0;
+}
+
+.fire img {
+  max-width: 100%;
+  border: 1px solid #2b2b2b;
+  padding: 0.5rem;
+  background: transparent;
+}
+
+/* Captions */
+.fire figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+}
+
+/* Placeholders */
+.fire .placeholder {
+  border: 1px solid #2b2b2b;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fire .placeholder p {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+}
 
 }
